@@ -2,9 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white shadow-md hover:bg-primary/80 duration-300 rounded-md py-[6px] px-4 hover:scale-[1.05];
+  }
+  .subHighlight {
+    @apply font-bold;
+  }
+  .input-label {
+    @apply text-gray-600 block pb-1;
+  }
+  .input {
+    @apply border border-gray-300 w-full rounded-full py-[3px] outline-none px-4 focus:ring-1 focus:ring-inset focus:ring-blue-200;
+  }
+  .parallelogram {
+    @apply w-48 h-24 bg-primary;
+    transform: skew(30deg);
+  }
+
+  html {
+    scrollbar-width: 4px; /* "auto" hides scrollbar when inactive, "thin" keeps it always visible */
+  }
+
+  /* Webkit (Safari, Chrome) */
+  ::-webkit-scrollbar {
+    width: 4px; /* Adjust thickness as needed */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #a52502; /* Your primary color */
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent; /* Make the track transparent */
+  }
+  .animated-gradient {
+    background: linear-gradient(270deg, #ff0000, #ff4500, #ff6347, #ff7f50);
+    background-size: 300% 300%;
+    animation: gradient-bg 5s ease infinite;
+  }
 }
 
+@keyframes gradient-bg {
+  0% {
+    background-size: 300% 300%;
+    background-position: 0% 50%;
+    background-color: #ff0000;
+  }
+  25% {
+    background-size: 300% 300%;
+    background-position: 50% 100%;
+    background-color: #ff4500;
+  }
+  50% {
+    background-size: 300% 300%;
+    background-position: 100% 50%;
+    background-color: #ff6347;
+  }
+  75% {
+    background-size: 300% 300%;
+    background-position: 50% 0%;
+    background-color: #ff7f50;
+  }
+  100% {
+    background-size: 300% 300%;
+    background-position: 0% 50%;
+    background-color: #ff0000;
+  }
+}

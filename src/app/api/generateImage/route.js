@@ -12,7 +12,7 @@ export async function POST(req) {
         'Content-Type': 'application/json',
         'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTU5NjgsImVtYWlsIjoibGF1cmVudEBtYXJnZXBsdXMuZnIiLCJ1c2VybmFtZSI6ImxhdXJlbnRAbWFyZ2VwbHVzLmZyIiwiaWF0IjoxNzIwMjg0Mzk1fQ.2Q_8WugH6hO8iTsI56Yv1MEdJT0GdDS2b1MpIg2UO1Q`, // Remplacez par votre clé API
       },
-      body: JSON.stringify({ prompt }),
+      body: JSON.stringify({ prompt}),
     });
 
     const data = await response.json();

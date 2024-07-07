@@ -3,9 +3,9 @@
 import { NextResponse } from 'next/server';
 
 export async function POST(req) {
-  const { searchParams } = new URL(req.url);
-  const messageId = searchParams.get('messageId');
-
+const body = await req.text()
+const { messageId } = JSON.parse(body);
+    
   try {
     const response = await fetch("https://api.mymidjourney.ai/api/v1/midjourney/button/", {
       method: 'POST',
@@ -13,7 +13,7 @@ export async function POST(req) {
         'Content-Type': 'application/json',
         'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTU5NjgsImVtYWlsIjoibGF1cmVudEBtYXJnZXBsdXMuZnIiLCJ1c2VybmFtZSI6ImxhdXJlbnRAbWFyZ2VwbHVzLmZyIiwiaWF0IjoxNzIwMjg0Mzk1fQ.2Q_8WugH6hO8iTsI56Yv1MEdJT0GdDS2b1MpIg2UO1Q`, // Replace with your API key
       },
-      body: JSON.stringify({   messageId: messageId, }),
+      body: JSON.stringify({   messageId, button : "U1" }),
     });
 
     const data = await response.json();

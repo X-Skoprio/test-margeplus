@@ -67,20 +67,21 @@ export default function Home() {
   };
 
   const handleSelectImage = async (e) => {
-
+    console.log(messageId);
     try {
       const response = await fetch("/api/buttonHandler/", {
         method: "POST",
-        date :
-        {
-          messageId: messageId}
-      })
-
+        body: JSON.stringify({
+           messageId,
+        }),
+      });
       const data = await response.json();
+      console.log("handleSelectImage data :",data);
+      setMessageId(String(data.messageId));
+      console.log("handleSelectImage data.messageId",data.messageId);
     } catch (error) {
-      console.log("ERROR : Index, handleSelectImage  : ",error);
+      console.log("ERROR : Index, handleSelectImage  : ", error);
     }
-   
   };
 
   return (
@@ -88,37 +89,41 @@ export default function Home() {
       <h1>Générateur d'images AI :</h1>
       <form onSubmit={handleGenerate}>
         <input
+          className="input"
           type="text"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           placeholder="Entrez votre prompt"
           required
         />
-        <button type="submit" disabled={loading}>
+        <button className="btn-primary" type="submit" disabled={loading}>
           {loading ? "Génération en cours..." : "Générer"}
         </button>
       </form>
       {messageId && (
         <>
-          <form onSubmit={handleGetImage}>
+          <form onSubmit={handleGetImage} className="flex items-center justify-center">
             <input
+              className="input"
               type="text"
               value={messageId}
               onChange={(e) => setMessageId(e.target.value)}
               placeholder="Entrez le message ID"
               required
             />
-            <button type="submit" disabled={loading}>
+            <button className="btn-primary" type="submit" disabled={loading}>
               {loading ? "Récupération en cours..." : "Récupérer l'image"}
             </button>
           </form>
-          <button onClick={handleSelectImage} disabled={loading}>
+          <button className="btn-primary" onClick={handleSelectImage} disabled={loading}>
             {loading ? "U1 en cours" : "U1"}
           </button>
         </>
       )}
       {error && <p style={{ color: "red" }}>{error}</p>}
-      {image && <img src={image} alt="Image générée par AI" />}
+      <div className="w-1/4 h-1/4">
+        {image && <img src={image} alt="Image générée par AI" />}
+      </div>
     </div>
   );
 }
