@@ -3,7 +3,6 @@
 import { useState } from "react";
 import XlsxXlsReader from "../../components/XlsxXlsReader.jsx";
 
-import XlsxXlsReader from "../../components/XlsxXlsReader.jsx";
 
 
 export default function Home() {
