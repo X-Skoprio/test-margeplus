@@ -15,9 +15,8 @@ export async function GET(req) {
     const response = await fetch(`https://api.mymidjourney.ai/api/v1/midjourney/message/${messageId}`, {
       method: 'GET',
       headers: {
-        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTU5NjgsImVtYWlsIjoibGF1cmVudEBtYXJnZXBsdXMuZnIiLCJ1c2VybmFtZSI6ImxhdXJlbnRAbWFyZ2VwbHVzLmZyIiwiaWF0IjoxNzIwMjg0Mzk1fQ.2Q_8WugH6hO8iTsI56Yv1MEdJT0GdDS2b1MpIg2UO1Q`, // Remplacez par votre clé API
+        'Authorization': `Bearer ${process.env.MY_MIDJOURNEY_API}`, // Remplacez par votre clé API
       },
-
     });
 
     if (!response.ok) {
