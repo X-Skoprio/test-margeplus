@@ -3,6 +3,8 @@
 import { useState } from "react";
 import XlsxXlsReader from "../../components/XlsxXlsReader.jsx";
 
+import XlsxXlsReader from "../../components/XlsxXlsReader.jsx";
+
 
 export default function Home() {
   const [prompt, setPrompt] = useState("");
@@ -82,7 +84,20 @@ export default function Home() {
       const data = await response.json();
       console.log("handleSelectImage data :", data);
       setMessageId(String(data.messageId));
-      console.log("handleSelectImage data.messageId", data.messageId);
+      console.log("handleSelectImage data.messageId",  data.messageId);
+      const response2 = await fetch(req2, {
+        method: "GET",
+      });
+      const data2 = await response2.json();
+      console.log(data2);
+      if (response.ok) {
+        setImage(data2.uri);
+        console.log("index.js : image url : ", data2.uri);
+        setImage(data2.uri);
+      } else {
+        setError(data.error);
+        console.log(data.error);
+      }
       const response2 = await fetch(req2, {
         method: "GET",
       });
