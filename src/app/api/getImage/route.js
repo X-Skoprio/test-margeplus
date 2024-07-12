@@ -12,7 +12,7 @@ export async function GET(req) {
   try {
     console.log("getImage route : message id :",messageId)
     console.log(`https://api.mymidjourney.ai/api/v1/midjourney/message/${messageId}`)
-    const response = await fetch(`https://api.mymidjourney.ai/api/v1/midjourney/message/cbe45611-138c-4297-8651-ff999ea53240`, {
+    const response = await fetch(`https://api.mymidjourney.ai/api/v1/midjourney/message/${messageId}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${process.env.MY_MIDJOURNEY_API}`, // Remplacez par votre clé API
