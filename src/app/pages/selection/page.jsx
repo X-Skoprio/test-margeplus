@@ -16,7 +16,7 @@ const page = () => {
           <h1>Crème Fraîche 6%</h1>
           <h1>Oignon</h1>
           <h1>Ail Blanc</h1>
-          <h1>Huile d'Olive Extra Vierge</h1>
+          <h1>Huile d&apos;Olive Extra Vierge</h1>
           <h1>Beurre Doux en Plaquette</h1>
           <h1>Sel et Poivre (pour Mémoire)</h1>
         </>
