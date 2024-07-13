@@ -48,7 +48,7 @@ const page = () => {
           className="shadow-2xl"
           src="https://cdn.discordapp.com/attachments/1250738015375065141/1261717552803876986/clarenceeva51_37596_Capture_the_awe-inspiring_vision_of_a_bustl_802a445f-01db-4969-982c-ce1df8f9261a.png?ex=6693f98a&is=6692a80a&hm=e0b4dc0c0a6ca79793fa6f48211190f359e9af983ab7487dad1a0537e8c391c0&"
         ></img>
-        <img className="absolute top-0" src="/images/margeplus_logo_preview_rev_1.png"></img>
+        <img className="absolute top-0" src="/images/margeplus_logo_preview_rev_1.png" width={120} height={120}></img>
       </div>
 
       <div className="w-full h-full px-20 flex flex-col justify-center items-center  ">
