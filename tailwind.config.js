@@ -26,7 +26,7 @@ module.exports = {
         moontime : ['Moon Time', 'sans-serif']
       },
       colors: {
-        primary : '#A52502',
+        primary : '#02A3CD',
         secondary : '#0f0f0f',
         darkColor : '#0f0f0f',
       },
