@@ -19,7 +19,7 @@ const RecipesPage = async () => {
 
   return (
     <div className='grid place-items-center w-full'>
-    <div className='grid place-items-center w-full p-4'>
+    {/* <div className='grid place-items-center w-full p-4'>
       <h1>Recipes</h1>
       {recipes.map((recipe) => (
         <div key={recipe.RecipeID} className='w-full' style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
@@ -36,7 +36,7 @@ const RecipesPage = async () => {
           </ul>
         </div>
       ))}
-    </div>
+    </div> */}
     </div>
   );
 };

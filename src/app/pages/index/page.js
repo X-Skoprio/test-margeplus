@@ -110,7 +110,7 @@ export default function Home() {
           <div className="">
             <form onSubmit={handleGenerate}>
               <label className="input-label">
-                Prompt : 4e945793-57e2-402b-aa17-2131af69c720
+                Prompt :
                 <input
                   className="input my-2"
                   type="text"
