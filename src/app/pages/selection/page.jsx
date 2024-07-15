@@ -24,31 +24,29 @@ const page = () => {
     },
   ];
   return (
-    <div className="w-full h-full grid grid-cols-2">
+    <div className="w-full h-full grid grid-cols-2 shadow-inner-[inset_0_0_0_20px] ">
       {/* Section Image */}
       <div className="w-full h-full p-36 border-2 border-primary relative">
-      {receipe.map((recipe) => (
-            <div
-              key={recipe.id}
-              className="w-full flex items-center justify-start shadow-2xl mb-2 rounded-t-sm border-y-2 border-primary p-1"
-            >
-              <h1 className="text-lg">
-                <span className="font-bold">ID Recette :</span>{" "}
-                {recipe.recetteId}
-              </h1>
-              <h1 className="ml-4 text-lg">
-                <span className="font-bold">Nom :</span> {recipe.name}
-              </h1>
-              <h1 className="ml-4 text-lg">
-                <span className="font-bold">Type :</span> {recipe.type}
-              </h1>
-            </div>
-          ))}
+        {receipe.map((recipe) => (
+          <div
+            key={recipe.id}
+            className="w-full flex items-center justify-start shadow-2xl mb-2 rounded-t-sm border-y-2 border-primary p-1"
+          >
+            <h1 className="ml-4 text-3xl w-full flex items-center justify-center">
+              <span className="font-bold"> {recipe.name}</span>
+            </h1>
+          </div>
+        ))}
         <img
           className="shadow-2xl"
-          src="https://cdn.discordapp.com/attachments/1250738015375065141/1261717552803876986/clarenceeva51_37596_Capture_the_awe-inspiring_vision_of_a_bustl_802a445f-01db-4969-982c-ce1df8f9261a.png?ex=6693f98a&is=6692a80a&hm=e0b4dc0c0a6ca79793fa6f48211190f359e9af983ab7487dad1a0537e8c391c0&"
+          src="https://image.mymidjourney.ai/storage/v1/object/public/cdn/3c49fa9a-c6ed-433e-882e-0d7346e05ed2.png"
         ></img>
-        <img className="absolute top-0" src="/images/margeplus_logo_preview_rev_1.png" width={120} height={120}></img>
+        <img
+          className="absolute top-0"
+          src="/images/margeplus_logo_preview_rev_1.png"
+          width={120}
+          height={120}
+        ></img>
       </div>
 
       <div className="w-full h-full px-20 flex flex-col justify-center items-center  ">
@@ -83,8 +81,10 @@ const page = () => {
             <button className="btn-primary w-26 h-10">Regénerer</button>
           </div>
           <div className="flex flex-col">
-            <h1 className="mb-4 font-bold ">Regénerer avec image de référence : </h1>
-            
+            <h1 className="mb-4 font-bold ">
+              Regénerer avec image de référence :{" "}
+            </h1>
+
             <input
               className="input mb-4"
               id="email"
@@ -100,12 +100,21 @@ const page = () => {
           <h1 className="font-bold text-2xl">Informations recette :</h1>
         </div>
         <div className="w-full flex flex-col items-center justify-start ">
-          
           {receipe.map((recipe) => (
             <div
               key={recipe.id}
-              className="w-full flex items-center justify-start mt-4"
+              className="w-full flex flex-col items-start justify-center mt-4"
             >
+              <div className="flex flex-col mb-4">
+                <h1 className="text-lg">
+                  <span className="font-bold">ID Recette :</span>{" "}
+                  {recipe.recetteId}
+                </h1>
+                <h1 className=" text-lg">
+                  <span className="font-bold">Type :</span> {recipe.type}
+                </h1>
+              </div>
+
               <h1 className="">
                 <span className="font-bold">Ingredients :</span>{" "}
                 {recipe.ingredients}
