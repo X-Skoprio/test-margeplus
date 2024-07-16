@@ -182,7 +182,7 @@ const Recipes = () => {
           onClick={() => handleImageClick(recipe.RecipeID, "RR")}
           disabled={isLoadingImageClick} // Disable button while loading
         >
-          Regéner 4 images à partir d'une image de référence aleatoire
+          Regéner 4 images à partir d&apos;une image de référence aleatoire
         </button>
       </div>
     </div>
