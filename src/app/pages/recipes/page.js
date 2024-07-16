@@ -140,7 +140,7 @@ const Recipes = () => {
       <p className={`font-bold h-full flex items-center justify-center mt-16 pr-5`}>
         ID: {recipe.RecipeID}
       </p>
-      <p className={`w-[50%] flex items-center justify-center font-bold text-3xl border-t-2 border-b-2 border-primary mt-16 py-1 `}>
+      <p className={`w-[70%] flex items-center justify-center font-bold text-3xl border-t-2 border-b-2 border-primary mt-16 py-1 `}>
         {recipe.RecipeLabel}
       </p>
     </div>
@@ -182,7 +182,7 @@ const Recipes = () => {
           onClick={() => handleImageClick(recipe.RecipeID, "RR")}
           disabled={isLoadingImageClick} // Disable button while loading
         >
-          Regéner 4 images avec REF
+          Regéner 4 images à partir d'une image de référence aleatoire
         </button>
       </div>
     </div>
