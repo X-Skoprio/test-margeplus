@@ -7,6 +7,7 @@ const Recipes = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isLoadingImageClick, setIsLoadingImageClick] = useState(false); // New state for loading image click
+  const [change, setChange] = useState(false);
 ///une fois recette à la fois 
 
   useEffect(() => {
@@ -63,10 +64,11 @@ const Recipes = () => {
     };
   
     fetchData();
-  }, [recipes]);
+  }, [change]);
   
   const handleImageClick = async (recipeId, imageIndex) => {
     try {
+      handleOnChange();
       setLoading(true);
       const response = await fetch(`/api/recipes`, {
         method: "POST",
@@ -124,6 +126,10 @@ const Recipes = () => {
       console.error("Error updating SelectedImageButton:", error);
       // Handle error as needed
     }
+  };
+
+  const handleOnChange = () => {
+    setChange(!change);
   };
   
   
