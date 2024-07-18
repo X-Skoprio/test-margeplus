@@ -98,7 +98,7 @@ const Recipes = () => {
           const imageUrls = await Promise.all(
             [1, 2, 3, 4].map(async (number) => {
               try {
-                const imageUrl = `/promptImages/${recipeId}_${number}.png`;
+                const imageUrl = `https://cc-prod.scene7.com/is/image/CCProdAuthor/tti-marquee-desktop@2x?$png$&jpegSize=200&wid=1162`;
                 const response = await fetch(imageUrl);
                 if (!response.ok) {
                   return null;
